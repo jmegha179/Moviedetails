@@ -17,11 +17,11 @@ export class AuthGuard implements CanActivate, CanActivateChild {
   ): Observable<boolean> | Promise<boolean> | boolean {
     const token = sessionStorage.getItem('access-token');
     if (token != null) {
-      return false;
+      return true;
     } else {
       alert('Sorry, First you have to login!!');
       this.router.navigate(['/login']);
-      return true;
+      return false;
     }
   }
   canActivateChild(

@@ -69,9 +69,10 @@ export class LoginComponent implements OnInit {
             this.loginFrom.reset();
           }
       }, error => {
-        this.toastr.error('Server Error', '', {
+        this.toastr.error('Server Error', 'Please your check you credential', {
           timeOut: 2000
         });
+        this.spinner.hide();
         this.loginFrom.reset();
       }
     );
