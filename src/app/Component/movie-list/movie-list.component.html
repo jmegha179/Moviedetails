@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="card-columns ">
+    <ng-container  *ngFor = "let movie of movieList | paginate: { itemsPerPage: 3, currentPage: p }
+    ">
+          <div class="card ">
+            <img class="card-img-top  movie-image" src= "{{path + movie.poster_path}}" alt="Card image" >
+            <div class="card-body">
+              <h4 class="card-title"><a >{{movie.title}}</a></h4>
+              <p class="card-text">{{movie.release_date}}</p>
+              <button class="btn btn-color" (click) ="movieDetail(movie.id)"> View Details</button>
+          </div>
+        </div>
+  </ng-container>
+  </div>
+  <div class="float-right mt-3">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>
+<ngx-spinner></ngx-spinner>

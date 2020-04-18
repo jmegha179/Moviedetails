@@ -1,0 +1,18 @@
+.navbar {
+    border-bottom: #00D273 3px solid;
+    background-color:rgb(3,37,65)
+  }
+  .nav-item{
+    font-size:20px;
+  }
+  .container-fluid{
+    margin-top:130px;
+  }
+  .dashboard-image{
+    border-radius: 50%;
+    height: 46px;
+  }
+  .dropdown-model{
+    margin-left:-60px
+     
+  }

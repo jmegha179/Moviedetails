@@ -1,0 +1,32 @@
+.header{
+    background-image: linear-gradient(to right, rgba(3,37,65, 0.8) 0%, rgba(3,37,65, 0) 100%), url('https://image.tmdb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,032541,01b4e4)/hPea3Qy5Gd6z4kJLUruBbwAH8Rm.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: auto;
+    margin-top: -65px;
+    color: #ffffff;
+}
+.p-text{
+    font-size: 50px;
+    font-weight: bolder;
+}
+.h-text{
+    font-weight: 600;
+    margin-top: -20px;
+}
+.scroll-css{
+    /* height: 40px; */
+    width: 100%;
+    overflow-x: scroll;
+}
+.search-box{
+    width: 100%;
+    height: 46px;
+    line-height: 46px;
+    font-size: 1.1em;
+    color: rgba(0,0,0,0.5);
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+}

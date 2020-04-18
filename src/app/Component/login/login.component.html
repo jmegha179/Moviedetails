@@ -1,0 +1,50 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-5 offset-md-3">
+      <div class="card ">
+        <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+        <p id="profile-name" class="profile-name-card"></p>
+        <form class="form-signin" [formGroup]="loginFrom" (ngSubmit)="login()">
+          <span id="reauth-email" class="reauth-email"></span>
+          <div class="form-group ">
+            <input type="email" id="inputEmail" class="form-control input" placeholder="email123@gmail.com"
+              formControlName="email" />
+            <div *ngIf="
+                loginFrom.get('email').invalid && loginFrom.get('email').touched
+              ">
+              <p class="invalid" *ngIf="loginFrom.get('email').errors.required">
+                Email is required.
+              </p>
+              <p class="invalid" *ngIf="loginFrom.get('email').errors.email">
+                Email must be a valid email address
+              </p>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="password" id="inputPassword" class="form-control input" placeholder="Password ***"
+              formControlName="password" />
+            <div *ngIf="
+                loginFrom.get('password').invalid &&
+                loginFrom.get('password').touched
+              ">
+              <p class="invalid" *ngIf="loginFrom.get('password').errors.required">
+                Password is required.
+              </p>
+              <p class="invalid" *ngIf="loginFrom.get('password').errors.minlength">
+                Password must be at least 6 characters
+              </p>
+            </div>
+          </div>
+          <button class="btn  btn-info btn-block " type="submit" [disabled]="!loginFrom.valid">
+            Login <i class="fa fa-sign-in"></i>
+          </button>
+          <hr>
+        </form>
+        <div class="text-center mt-2">
+          Dont have an account? <a routerLink="/register"> Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ngx-spinner></ngx-spinner>

@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="header p-5">
+    <p class="p-text pt-2">Welcome .</p>
+    <h2 class="h-text">Millions of movies, TV shows and people to discover. Explore now.</h2>
+    <input type="text " class="search-box mt-4" [(ngModel)]="searchString" placeholder="Search for movies..">
+  </div>
+
+  <div class="mt-5">
+    <h3>What's Popular</h3>
+  </div>
+
+  <div class="row flex-row flex-nowrap  scroll-css">
+    <ng-container *ngFor="let movie of movieList | searchByName: 'name':searchString ">
+      <div class="col-3">
+        <div class="card ">
+          <img class="card-img-top  movie-image" src="{{path + movie.poster_path}}" alt="Card image">
+
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

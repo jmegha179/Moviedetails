@@ -1,0 +1,139 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 ">
+      <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <div class="card  rounded-5">
+          <div class="card-header p-0">
+            <div class="bg-grey  text-dark text-center py-2 ">
+              <p class="m-0"><strong>Register new user</strong></p>
+            </div>
+          </div>
+          <div class="card-body p-3 mt-3">
+            <div class="form-group">
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="fa fa-envelope text-dark"></i>
+                  </div>
+                </div>
+                <input
+                  type="email"
+                  class="form-control"
+                  name="email"
+                  placeholder="ejemplo@gmail.com"
+                  formControlName="email"
+                />
+              </div>
+              <div
+                *ngIf="
+                  registerForm.get('email').invalid &&
+                  registerForm.get('email').touched
+                "
+              >
+                <p
+                  class="invalid"
+                  *ngIf="registerForm.get('email').errors.required"
+                >
+                  Email is required.
+                </p>
+                <p
+                  class="invalid"
+                  *ngIf="registerForm.get('email').errors.email"
+                >
+                  Email must be a valid email address
+                </p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="fa fa-key text-dark"></i>
+                  </div>
+                </div>
+                <input
+                  type="password"
+                  class="form-control"
+                  name="password"
+                  placeholder="password ***"
+                  formControlName="password"
+                />
+              </div>
+              <div
+                *ngIf="
+                  registerForm.get('password').invalid &&
+                  registerForm.get('password').touched
+                "
+              >
+                <p
+                  class="invalid"
+                  *ngIf="registerForm.get('password').errors.required"
+                >
+                  Password is required.
+                </p>
+                <p
+                  class="invalid"
+                  *ngIf="registerForm.get('password').errors.minlength"
+                >
+                  Password must be at least 6 characters
+                </p>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="fa fa-key text-dark"></i>
+                  </div>
+                </div>
+                <input
+                  type="password"
+                  class="form-control"
+                  name="confirmPassword"
+                  placeholder=" Retype Password ***"
+                  formControlName="confirmPassword"
+                />
+              </div>
+              <div
+                *ngIf="
+                  registerForm.get('confirmPassword').invalid &&
+                  registerForm.get('confirmPassword').touched
+                "
+              >
+                <p
+                  class="invalid"
+                  *ngIf="registerForm.get('confirmPassword').errors.required"
+                >
+                  Confirm password  is required.
+                </p>
+                <p
+                  class="invalid"
+                  *ngIf="registerForm.get('confirmPassword').errors.minlength"
+                >
+                confirm  Password must be at least 6 characters
+                </p>
+              </div>
+            </div>
+            <div class="form-group ">
+              <button
+                id="btn-signup"
+                type="submit"
+                class="btn btn-primary btn-md btn-block"
+                [disabled]="!registerForm.valid"
+              >
+                Sign Up <i class="fa fa-user-plus"></i>
+              </button>
+            </div>
+
+            <hr />
+            <div class="text-center mt-2">
+              Do you have an account! <a routerLink="/login"> Login Here </a>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<ngx-spinner></ngx-spinner>
