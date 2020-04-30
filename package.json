@@ -28,7 +28,7 @@
     "express": "^4.17.1",
     "font-awesome": "^4.7.0",
     "gapi-client": "0.0.3",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ng-circle-progress": "^1.5.1",
     "ng6-toastr-notifications": "^1.0.4",
     "ngx-loading": "^2.0.1",
