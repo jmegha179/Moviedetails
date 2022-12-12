@@ -25,7 +25,7 @@
     "angular-6-social-login": "^1.1.1",
     "angularfire2": "^5.2.1",
     "bootstrap": "^4.3.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "font-awesome": "^4.7.0",
     "gapi-client": "0.0.3",
     "jquery": "^3.4.1",
